@@ -8,7 +8,11 @@
         android:id="@+id/navInicio"
         android:name="com.example.smartcarapp.ui.fragments.InicioFragment"
         android:label="fragment_inicio"
-        tools:layout="@layout/fragment_inicio" />
+        tools:layout="@layout/fragment_inicio" >
+        <action
+            android:id="@+id/nav_inicio_compras_fecha"
+            app:destination="@id/compras_fecha" />
+    </fragment>
     <fragment
         android:id="@+id/navMisViajes"
         android:name="com.example.smartcarapp.ui.fragments.MisViajesFragment"
@@ -19,4 +23,9 @@
         android:name="com.example.smartcarapp.ui.fragments.PerfilFragment"
         android:label="fragment_perfil"
         tools:layout="@layout/fragment_perfil" />
+    <fragment
+        android:id="@+id/compras_fecha"
+        android:name="com.example.smartcarapp.ui.fragments.Compras.compras_fecha"
+        android:label="_compras_fecha"
+        tools:layout="@layout/_compras_fecha" />
 </navigation>
