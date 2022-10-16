@@ -16,7 +16,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.077" />
+        app:layout_constraintVertical_bias="0.048" />
 
     <Button
         android:id="@+id/btn_IyV"
@@ -25,10 +25,10 @@
         android:text="Ida y Vuelta"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.024"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.077" />
+        app:layout_constraintVertical_bias="0.048" />
 
     <CalendarView
         android:id="@+id/calendarView"
@@ -39,10 +39,10 @@
         app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.305" />
+        app:layout_constraintVertical_bias="0.421" />
 
     <Button
-        android:id="@+id/btn_cont"
+        android:id="@+id/btn_cont_fecha"
         android:layout_width="217dp"
         android:layout_height="49dp"
         android:text="Continuar"

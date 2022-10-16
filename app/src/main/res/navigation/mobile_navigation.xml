@@ -27,5 +27,32 @@
         android:id="@+id/compras_fecha"
         android:name="com.example.smartcarapp.ui.fragments.Compras.compras_fecha"
         android:label="_compras_fecha"
-        tools:layout="@layout/_compras_fecha" />
+        tools:layout="@layout/_compras_fecha" >
+        <action
+            android:id="@+id/action_compras_fecha_to_compras_cantPasajeros"
+            app:destination="@id/compras_cantPasajeros" />
+    </fragment>
+    <fragment
+        android:id="@+id/compras_cantPasajeros"
+        android:name="com.example.smartcarapp.ui.fragments.Compras.compras_cantPasajeros"
+        android:label="_compras_cant_pasajeros"
+        tools:layout="@layout/_compras_cant_pasajeros" >
+        <action
+            android:id="@+id/action_compras_cantPasajeros_to_compras_escogerIda"
+            app:destination="@id/compras_escogerIda" />
+    </fragment>
+    <fragment
+        android:id="@+id/compras_escogerIda"
+        android:name="com.example.smartcarapp.ui.fragments.Compras.compras_escogerIda"
+        android:label="_compras_escoger_ida"
+        tools:layout="@layout/_compras_escoger_ida" >
+        <action
+            android:id="@+id/action_compras_escogerIda_to_compras_escogerVuelta"
+            app:destination="@id/compras_escogerVuelta" />
+    </fragment>
+    <fragment
+        android:id="@+id/compras_escogerVuelta"
+        android:name="com.example.smartcarapp.ui.fragments.Compras.compras_escogerVuelta"
+        android:label="_compras_escoger_vuelta"
+        tools:layout="@layout/_compras_escoger_vuelta" />
 </navigation>

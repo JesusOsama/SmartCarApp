@@ -9,23 +9,25 @@ import android.widget.Button
 import androidx.navigation.findNavController
 import com.example.smartcarapp.R
 
-class compras_fecha : Fragment() {
+
+class compras_cantPasajeros : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
 
-        val view: View = inflater.inflate(R.layout._compras_fecha, container, false)
+        val view: View = inflater.inflate(R.layout._compras_cant_pasajeros, container, false)
 
-        val btnContinuar: Button = view.findViewById(R.id.btn_cont_fecha)
+        val btnContinuar: Button = view.findViewById(R.id.btn_cont_Cantidad)
 
         btnContinuar.setOnClickListener{ view ->
-            view.findNavController().navigate(R.id.action_compras_fecha_to_compras_cantPasajeros)
+            view.findNavController().navigate(R.id.action_compras_cantPasajeros_to_compras_escogerIda)
         }
 
         return view
+
     }
+
 
 }
