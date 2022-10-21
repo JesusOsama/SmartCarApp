@@ -21,11 +21,11 @@ class compras_escogerVuelta : Fragment() {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout._compras_escoger_vuelta, container, false)
 
-        //val btnContinuar: Button = view.findViewById(R.id.btn_continuar_Ida)
+        val btnContinuar: Button = view.findViewById(R.id.btn_cont_vuelta)
 
-        //btnContinuar.setOnClickListener{ view ->
-        //    view.findNavController().navigate(R.id.action_compras_fecha_to_compras_cantPasajeros)
-        //}
+        btnContinuar.setOnClickListener{ view ->
+           view.findNavController().navigate(R.id.action_compras_escogerVuelta_to_compras_pago)
+        }
 
         return view
 
