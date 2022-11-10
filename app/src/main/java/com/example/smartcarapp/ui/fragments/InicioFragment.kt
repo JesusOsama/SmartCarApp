@@ -66,7 +66,7 @@ class InicioFragment : Fragment() {
                 }
             }
 
-        // Probando github
+        // Probando
         return view
     }
 
