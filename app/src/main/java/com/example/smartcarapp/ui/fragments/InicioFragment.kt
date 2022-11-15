@@ -37,6 +37,7 @@ class InicioFragment : Fragment() {
             view.findNavController().navigate(R.id.nav_inicio_compras_fecha)
         }
 
+
         val db = FirebaseFirestore.getInstance()
 
         db.collection("prueba")

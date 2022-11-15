@@ -6,8 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.TextView
+import com.example.smartcarapp.Login_Activity
 import com.example.smartcarapp.R
+import com.example.smartcarapp.ui.Cliente_Activity
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -24,10 +27,12 @@ class PerfilFragment : Fragment() {
         val tvCorreo: TextView = view.findViewById(R.id.tvCorreo)
 
 
+        val correo = getArguments()?.getString("correo").toString()
+
         val db = FirebaseFirestore.getInstance()
 
 
-        db.collection("Usuario").whereIn("correo", listOf("correo del usuario")) // Debe ir el correo del usuario que inicio sesión
+        db.collection("Usuario").whereIn("correo", listOf(correo)) // Debe ir el correo del usuario que inicio sesión
             .addSnapshotListener { snapshots, e ->
                 if( e != null){
                     Log.w("Firebase", "Error al Consultar Usuario")

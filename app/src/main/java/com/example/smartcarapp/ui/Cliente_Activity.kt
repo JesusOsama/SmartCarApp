@@ -3,6 +3,7 @@ package com.example.smartcarapp.ui
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -22,9 +23,13 @@ class Cliente_Activity : AppCompatActivity() {
 
         val navView: BottomNavigationView = binding.navView
 
+        val correoUsuarioActual = intent.getStringExtra("correo")
+
         val navController = findNavController(R.id.nav_host_fragment_activity_cliente)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
+        navController.navigate(R.id.navPerfil, bundleOf("correo" to correoUsuarioActual))
+        navController.navigate(R.id.navInicio, bundleOf("correo" to correoUsuarioActual))
+
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navInicio, R.id.navMisViajes, R.id.navPerfil
