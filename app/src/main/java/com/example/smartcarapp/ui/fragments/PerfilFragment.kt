@@ -8,11 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.TextView
+import androidx.lifecycle.ViewModelProvider.NewInstanceFactory.Companion.instance
 import com.example.smartcarapp.Login_Activity
 import com.example.smartcarapp.R
 import com.example.smartcarapp.ui.Cliente_Activity
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
+import io.grpc.InternalChannelz.instance
+import io.grpc.util.TransmitStatusRuntimeExceptionInterceptor.instance
 
 
 class PerfilFragment : Fragment() {
@@ -20,6 +23,8 @@ class PerfilFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+
         val view: View = inflater.inflate(R.layout.fragment_perfil, container, false)
         val tvDni: TextView = view.findViewById(R.id.tvDni)
         val tvNombre: TextView = view.findViewById(R.id.tvNombre)
@@ -27,7 +32,8 @@ class PerfilFragment : Fragment() {
         val tvCorreo: TextView = view.findViewById(R.id.tvCorreo)
 
 
-        val correo = getArguments()?.getString("correo").toString()
+
+        val correo = (activity as Cliente_Activity).correoUsuarioActual
 
         val db = FirebaseFirestore.getInstance()
 

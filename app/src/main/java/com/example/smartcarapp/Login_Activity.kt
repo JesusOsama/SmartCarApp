@@ -19,8 +19,6 @@ class Login_Activity : AppCompatActivity() {
         val txtPassword: EditText = findViewById(R.id.txtPassword)
         val btnLogin: Button = findViewById(R.id.button_Login)
 
-
-
         btnLogin.setOnClickListener{
             val correo = txtEmail.text.toString()
             val clave = txtPassword.text.toString()

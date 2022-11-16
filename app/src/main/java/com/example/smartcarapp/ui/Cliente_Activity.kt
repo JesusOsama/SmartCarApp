@@ -14,27 +14,32 @@ import com.example.smartcarapp.databinding.ActivityClienteBinding
 class Cliente_Activity : AppCompatActivity() {
 
     private lateinit var binding: ActivityClienteBinding
+    var correoUsuarioActual: String? = null
+
+    companion object {
+        val instance = Cliente_Activity()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        correoUsuarioActual = intent.getStringExtra("correo")
 
         binding = ActivityClienteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val navView: BottomNavigationView = binding.navView
 
-        val correoUsuarioActual = intent.getStringExtra("correo")
-
         val navController = findNavController(R.id.nav_host_fragment_activity_cliente)
-
-        navController.navigate(R.id.navPerfil, bundleOf("correo" to correoUsuarioActual))
-        navController.navigate(R.id.navInicio, bundleOf("correo" to correoUsuarioActual))
 
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navInicio, R.id.navMisViajes, R.id.navPerfil
             )
         )
+
+        //navController.navigate(R.id.navPerfil, bundleOf("correo" to correoUsuarioActual))
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
