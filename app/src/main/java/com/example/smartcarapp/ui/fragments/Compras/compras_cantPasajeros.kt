@@ -32,6 +32,7 @@ class compras_cantPasajeros : Fragment() {
         val tvNinos: TextView = view.findViewById(R.id.tvNi)
         val tvInf: TextView = view.findViewById(R.id.tvInf)
 
+
         btnContinuar.setOnClickListener{ view ->
             view.findNavController().navigate(R.id.action_compras_cantPasajeros_to_compras_escogerIda)
         }
