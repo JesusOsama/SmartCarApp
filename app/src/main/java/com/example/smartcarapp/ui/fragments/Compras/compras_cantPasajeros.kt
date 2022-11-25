@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import com.example.smartcarapp.R
 
@@ -31,11 +32,6 @@ class compras_cantPasajeros : Fragment() {
         val tvAdultos: TextView = view.findViewById(R.id.tvAdul)
         val tvNinos: TextView = view.findViewById(R.id.tvNi)
         val tvInf: TextView = view.findViewById(R.id.tvInf)
-
-
-        btnContinuar.setOnClickListener{ view ->
-            view.findNavController().navigate(R.id.action_compras_cantPasajeros_to_compras_escogerIda)
-        }
 
         btnSumAdul.setOnClickListener{
             if (contadorAdul >= 9){
@@ -91,6 +87,25 @@ class compras_cantPasajeros : Fragment() {
             }
             tvInf.setText(""+contadorInf)
         }
+
+        btnContinuar.setOnClickListener{ view ->
+
+            var lugares = arguments?.getString("lugares")
+            var fecha = arguments?.getString("fecha")
+
+            val cantAdult = tvAdultos.text.toString()
+            val cantNinos = tvNinos.text.toString()
+            val cantInf = tvInf.text.toString()
+
+            val bundle = bundleOf("fecha" to fecha,
+                                    "lugares" to lugares,
+                                    "cantAdultos" to cantAdult,
+                                    "cantNin" to cantNinos,
+                                    "cantInf" to cantInf)
+
+            view.findNavController().navigate(R.id.action_compras_cantPasajeros_to_compras_escogerIda, bundle)
+        }
+
         return view
     }
 }

@@ -13,6 +13,14 @@
         android:theme="@style/Theme.SmartCarApp"
         tools:targetApi="31">
         <activity
+            android:name=".Admin_Activity"
+            android:exported="false"
+            android:label="@string/title_activity_admin">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ui.Cliente_Activity"
             android:exported="false"
             android:label="@string/title_activity_cliente" />
@@ -22,7 +30,7 @@
             android:label="@string/title_activity_login" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity> <!-- Hacemos que el Login siempre sea primero -->
+            android:exported="true" /> <!-- Hacemos que el Login siempre sea primero -->
         <activity
             android:name=".Login_Activity"
             android:exported="true">

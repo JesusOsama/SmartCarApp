@@ -21,5 +21,6 @@
         <item>Trujillo</item>
         <item>Huancayo</item>
     </string-array>
+    <string name="title_activity_admin">Admin_Activity</string>
 
 </resources>
