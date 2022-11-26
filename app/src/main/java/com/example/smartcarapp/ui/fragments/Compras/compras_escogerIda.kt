@@ -29,6 +29,7 @@ class compras_escogerIda : Fragment() {
         val btnContinuar: Button = view.findViewById(R.id.btn_cont_Ida)
 
         var ruta = arguments?.getString("lugares")
+
         val db = FirebaseFirestore.getInstance()
         val lstBoletos:ArrayList<BoletoModel> = ArrayList()
         val rvEscogerIda: RecyclerView = view.findViewById(R.id.rvEscogerIda)

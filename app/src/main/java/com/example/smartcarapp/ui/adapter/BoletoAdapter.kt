@@ -1,3 +1,4 @@
+
 package com.example.smartcarapp.ui.adapter
 
 import android.view.LayoutInflater
@@ -32,6 +33,5 @@ class BoletoAdapter(private var lstBoleto: List<BoletoModel>):
     override fun getItemCount(): Int {
         return lstBoleto.size
     }
-
 
 }

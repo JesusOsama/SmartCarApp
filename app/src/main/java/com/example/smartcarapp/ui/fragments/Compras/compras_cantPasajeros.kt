@@ -33,6 +33,11 @@ class compras_cantPasajeros : Fragment() {
         val tvNinos: TextView = view.findViewById(R.id.tvNi)
         val tvInf: TextView = view.findViewById(R.id.tvInf)
 
+
+        btnContinuar.setOnClickListener{ view ->
+            view.findNavController().navigate(R.id.action_compras_cantPasajeros_to_compras_escogerIda)
+        }
+
         btnSumAdul.setOnClickListener{
             if (contadorAdul >= 9){
                 contadorAdul = 9
@@ -88,6 +93,8 @@ class compras_cantPasajeros : Fragment() {
             tvInf.setText(""+contadorInf)
         }
 
+
+
         btnContinuar.setOnClickListener{ view ->
 
             var lugares = arguments?.getString("lugares")
@@ -98,10 +105,10 @@ class compras_cantPasajeros : Fragment() {
             val cantInf = tvInf.text.toString()
 
             val bundle = bundleOf("fecha" to fecha,
-                                    "lugares" to lugares,
-                                    "cantAdultos" to cantAdult,
-                                    "cantNin" to cantNinos,
-                                    "cantInf" to cantInf)
+                "lugares" to lugares,
+                "cantAdultos" to cantAdult,
+                "cantNin" to cantNinos,
+                "cantInf" to cantInf)
 
             view.findNavController().navigate(R.id.action_compras_cantPasajeros_to_compras_escogerIda, bundle)
         }

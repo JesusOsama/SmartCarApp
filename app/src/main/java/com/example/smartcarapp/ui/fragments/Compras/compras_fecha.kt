@@ -31,7 +31,7 @@ class compras_fecha : Fragment() {
             CalendarView.OnDateChangeListener{ _, year, month, dayOfMonth ->
                 fecha= (dayOfMonth.toString() + "-" + (month + 1) + "-" + year)
                 val bundle = bundleOf("fecha" to fecha,
-                                        "lugares" to lugares)
+                    "lugares" to lugares)
 
                 btnContinuar.setOnClickListener{ view ->
                     println(fecha + lugares)
@@ -39,7 +39,6 @@ class compras_fecha : Fragment() {
                 }
             }
         )
-
         return view
     }
 }
