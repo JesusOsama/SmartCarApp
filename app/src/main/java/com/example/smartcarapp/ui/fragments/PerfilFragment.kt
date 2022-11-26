@@ -6,16 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.TextView
-import androidx.lifecycle.ViewModelProvider.NewInstanceFactory.Companion.instance
-import com.example.smartcarapp.Login_Activity
 import com.example.smartcarapp.R
-import com.example.smartcarapp.ui.Cliente_Activity
+import com.example.smartcarapp.Cliente_Activity
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
-import io.grpc.InternalChannelz.instance
-import io.grpc.util.TransmitStatusRuntimeExceptionInterceptor.instance
 
 
 class PerfilFragment : Fragment() {

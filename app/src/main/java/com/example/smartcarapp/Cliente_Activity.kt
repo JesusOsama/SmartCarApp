@@ -1,14 +1,12 @@
-package com.example.smartcarapp.ui
+package com.example.smartcarapp
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.smartcarapp.R
 import com.example.smartcarapp.databinding.ActivityClienteBinding
 
 class Cliente_Activity : AppCompatActivity() {
