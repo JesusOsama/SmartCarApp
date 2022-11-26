@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation2"
+    app:startDestination="@id/navInicioAdmin">
+    <fragment
+        android:id="@+id/navInicioAdmin"
+        android:name="com.example.smartcarapp.ui.fragments_Admin.AdminInicioFragment"
+        android:label="fragment_admin_inicio"
+        tools:layout="@layout/fragment_admin_inicio" />
+    <fragment
+        android:id="@+id/navRegistro"
+        android:name="com.example.smartcarapp.ui.fragments_Admin.AdminRegistroFragment"
+        android:label="fragment_admin_registro"
+        tools:layout="@layout/fragment_admin_registro" />
+    <fragment
+        android:id="@+id/navReporte"
+        android:name="com.example.smartcarapp.ui.fragments_Admin.AdminReporteFragment"
+        android:label="fragment_admin_reporte"
+        tools:layout="@layout/fragment_admin_reporte" />
+</navigation>

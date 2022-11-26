@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.example.smartcarapp.R
-import com.example.smartcarapp.Cliente_Activity
+import com.example.smartcarapp.ui.Cliente_Activity
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
 
