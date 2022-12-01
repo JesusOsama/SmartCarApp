@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.smartcarapp.ui.Cliente_Activity
+import com.example.smartcarapp.ui.Register_Activity
 import com.google.firebase.auth.FirebaseAuth
 
 class Login_Activity : AppCompatActivity() {
@@ -18,10 +19,12 @@ class Login_Activity : AppCompatActivity() {
         val txtEmail: EditText = findViewById(R.id.txtEmail)
         val txtPassword: EditText = findViewById(R.id.txtPassword)
         val btnLogin: Button = findViewById(R.id.button_Login)
+        val btnReg:Button=findViewById(R.id.btnRegistro)
 
         btnLogin.setOnClickListener{
             val correo = txtEmail.text.toString()
             val clave = txtPassword.text.toString()
+
 
             db.signInWithEmailAndPassword(correo,clave)
                 .addOnCompleteListener(this){task->
@@ -34,6 +37,11 @@ class Login_Activity : AppCompatActivity() {
                         Toast.makeText(this,"Correo o clave incorrecta", Toast.LENGTH_LONG).show()
                     }
                 }
+        }
+
+        btnReg.setOnClickListener {
+                val intent = Intent(this,Register_Activity::class.java)
+                startActivity(intent)
         }
     }
 }
