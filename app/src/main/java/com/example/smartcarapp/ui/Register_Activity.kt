@@ -66,10 +66,6 @@ class Register_Activity : AppCompatActivity() {
                         }
                 }
             }
-
-
-
-
-
+        }
     }
 }
