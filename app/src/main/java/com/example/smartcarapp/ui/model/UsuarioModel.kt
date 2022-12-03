@@ -5,6 +5,6 @@ data class UsuarioModel(
     val nombre: String,
     val apellido: String,
     val correo: String,
-    //val clave: String,
-    val estado: String ="0"
+    val estado: String = "0"
+
 )
