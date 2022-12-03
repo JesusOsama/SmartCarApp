@@ -24,6 +24,7 @@ class Register_Activity : AppCompatActivity() {
         val etCorreo: EditText = findViewById(R.id.etCorreo)
         val etContraseña: EditText = findViewById(R.id.etContra)
         val etnombres: EditText = findViewById(R.id.etNombre)
+        val etDni: EditText = findViewById(R.id.etDni)
         val etapellidos:EditText = findViewById(R.id.etApellidos)
         val btnReg: Button =findViewById(R.id.btnRegistrar)
 
@@ -41,11 +42,15 @@ class Register_Activity : AppCompatActivity() {
             }else if(etContraseña.text.toString().length<6){
                 etContraseña.requestFocus()
                 etContraseña.setError("La contraseña debe tener una longitud mayor a 6")
+            }else if(etDni.text.toString().length!=8){
+                etDni.requestFocus()
+                etDni.setError("El DNI solo contiene 8 números")
             }else{
                 val email= etCorreo.text.toString()
                 val password = etContraseña.text.toString()
                 val nombres=etnombres.text.toString()
                 val apellidos=etapellidos.text.toString()
+                val dni=etDni.text.toString()
 
                 dbU.createUserWithEmailAndPassword(email, password).addOnCompleteListener{
                     val user: FirebaseUser? = dbU.getCurrentUser()
@@ -55,6 +60,7 @@ class Register_Activity : AppCompatActivity() {
                         apellidos,
                         email,
                         password,
+                        dni
                     )
                     db.collection("Usuario").document(idUser).set(datosUsuarios)
                         .addOnSuccessListener {
