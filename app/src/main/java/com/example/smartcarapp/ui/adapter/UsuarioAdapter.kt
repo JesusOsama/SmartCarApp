@@ -36,5 +36,4 @@ class UsuarioAdapter(private var lstUsuario: List<UsuarioModel>):
         return lstUsuario.size
     }
 
-
 }

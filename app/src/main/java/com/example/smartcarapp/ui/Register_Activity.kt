@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.Toast
 import com.example.smartcarapp.Login_Activity
 import com.example.smartcarapp.R
+import com.example.smartcarapp.ui.model.UsuarioModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
@@ -49,13 +50,13 @@ class Register_Activity : AppCompatActivity() {
                 dbU.createUserWithEmailAndPassword(email, password).addOnCompleteListener{
                     val user: FirebaseUser? = dbU.getCurrentUser()
                     val idUser: String = user!!.uid
-                    val datosUsuarios = UsuariosModel(
+                    val datosUsuarios = UsuarioModel(
                         nombres,
                         apellidos,
                         email,
                         password,
                     )
-                    db.collection("Voluntarios").document(idUser).set(datosUsuarios)
+                    db.collection("Usuario").document(idUser).set(datosUsuarios)
                         .addOnSuccessListener {
                             Toast.makeText(this, "Nuevo Usuario registrado", Toast.LENGTH_LONG)
                                 .show()

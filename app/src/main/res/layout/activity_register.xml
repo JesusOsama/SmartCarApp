@@ -9,20 +9,28 @@
     <EditText
         android:id="@+id/etContra"
         android:layout_width="240dp"
-        android:layout_height="46dp"
+        android:layout_height="48dp"
         android:ems="10"
         android:hint="Contraseña"
         android:inputType="textPassword"
-        tools:layout_editor_absoluteX="91dp"
-        tools:layout_editor_absoluteY="396dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.572" />
 
     <Button
         android:id="@+id/btnRegistrar"
         android:layout_width="245dp"
         android:layout_height="63dp"
         android:text="Registrar"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="465dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.697" />
 
     <EditText
         android:id="@+id/etNombre"
@@ -31,8 +39,12 @@
         android:ems="10"
         android:hint="Nombres"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="91dp"
-        tools:layout_editor_absoluteY="165dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.202" />
 
     <EditText
         android:id="@+id/etApellidos"
@@ -41,8 +53,12 @@
         android:ems="10"
         android:hint="Apellidos"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="91dp"
-        tools:layout_editor_absoluteY="244dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.338" />
 
     <EditText
         android:id="@+id/etCorreo"
@@ -51,7 +67,11 @@
         android:ems="10"
         android:hint="Correo"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="91dp"
-        tools:layout_editor_absoluteY="319dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.442" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
