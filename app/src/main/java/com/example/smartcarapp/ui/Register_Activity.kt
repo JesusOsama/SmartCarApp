@@ -55,6 +55,7 @@ class Register_Activity : AppCompatActivity() {
                         apellidos,
                         email,
                         password,
+
                     )
                     db.collection("Usuario").document(idUser).set(datosUsuarios)
                         .addOnSuccessListener {

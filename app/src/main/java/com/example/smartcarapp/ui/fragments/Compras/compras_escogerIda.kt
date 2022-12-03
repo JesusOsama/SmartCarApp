@@ -61,7 +61,7 @@ class compras_escogerIda : Fragment() {
             }
 
         btnContinuar.setOnClickListener{ view ->
-            view.findNavController().navigate(R.id.action_compras_escogerIda_to_compras_escogerVuelta)
+            view.findNavController().navigate(R.id.action_compras_escogerIda_to_compras_pago)
         }
 
         return view

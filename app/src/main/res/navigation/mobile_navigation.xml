@@ -47,19 +47,7 @@
         android:label="_compras_escoger_ida"
         tools:layout="@layout/_compras_escoger_ida" >
         <action
-            android:id="@+id/action_compras_escogerIda_to_compras_escogerVuelta"
-            app:destination="@id/compras_escogerVuelta" />
-        <action
             android:id="@+id/action_compras_escogerIda_to_compras_pago"
-            app:destination="@id/compras_pago" />
-    </fragment>
-    <fragment
-        android:id="@+id/compras_escogerVuelta"
-        android:name="com.example.smartcarapp.ui.fragments.Compras.compras_escogerVuelta"
-        android:label="_compras_escoger_vuelta"
-        tools:layout="@layout/_compras_escoger_vuelta" >
-        <action
-            android:id="@+id/action_compras_escogerVuelta_to_compras_pago"
             app:destination="@id/compras_pago" />
     </fragment>
     <fragment

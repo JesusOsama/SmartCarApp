@@ -1,5 +1,6 @@
 package com.example.smartcarapp
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,10 +14,15 @@ import com.example.smartcarapp.ui.Register_Activity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
+import kotlin.system.measureTimeMillis
 
 class Login_Activity : AppCompatActivity() {
-    var estado: String = "1"
+    var acceso: String = "0"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -29,14 +35,15 @@ class Login_Activity : AppCompatActivity() {
 
         btnLogin.setOnClickListener{
             val correo = txtEmail.text.toString()
+            accesoAdmin(correo)
+
             val clave = txtPassword.text.toString()
 
             db.signInWithEmailAndPassword(correo,clave)
                 .addOnCompleteListener(this){task->
                     if(task.isSuccessful){
                         Toast.makeText(this,"Inicio satisfactorio", Toast.LENGTH_LONG).show()
-                        if(false){
-                            println(accesoAdmin(correo))
+                        if(acceso == "1"){
                             val intent = Intent(this, Admin_Activity::class.java)
                             intent.putExtra("correo", correo)
                             startActivity(intent)
@@ -58,10 +65,18 @@ class Login_Activity : AppCompatActivity() {
     }
 
     fun accesoAdmin(correo: String){
-        var estado: String
         val db = FirebaseFirestore.getInstance()
-
-        //db.collection("Usuario").whereIn("correo", listOf(correo)).get().addOnCompleteListener()
-
+        db.collection("Usuario")
+            .whereEqualTo("correo", correo)
+            .get()
+            .addOnSuccessListener{ documents ->
+                for (document in documents) {
+                    acceso = document.data["estado"].toString()
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.w(TAG, "Error getting documents: ", exception)
+            }
     }
+
 }
